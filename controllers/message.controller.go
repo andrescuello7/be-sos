@@ -27,7 +27,7 @@ func PostMessage(w http.ResponseWriter, r *http.Request) {
 	url := os.Getenv("URL_PATH")
 	method := "POST"
 	message := messageModel.Message
-	peticion := "To=whatsapp%3A%2B" + os.Getenv("TO_PHONE") + "&From=whatsapp%3A%2B" + os.Getenv("FROM_PHONE") + "&Body=" + message
+	peticion := "To=whatsapp%3A%2B549" + messageModel.Contact + "&From=whatsapp%3A%2B" + os.Getenv("FROM_PHONE") + "&Body=" + message
 
 	payload := strings.NewReader(peticion)
 
