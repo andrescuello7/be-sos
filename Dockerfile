@@ -1,6 +1,8 @@
 FROM goland:last AS builder
 
-RUN apt-get update \ ./deploy
+RUN echo "Welcome"
+
+RUN apt-get update \ echo "Finish"
 
 WORKDIR /GoMessage
 
