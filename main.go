@@ -6,15 +6,9 @@ import (
 	"net/http"
 
 	"github.com/gorilla/mux"
-	"github.com/joho/godotenv"
 )
 
 func main() {
-	err := godotenv.Load(".env")
-	if err != nil {
-		log.Fatal("Error loading environment")
-	}
-
 	router := mux.NewRouter().PathPrefix("/api").Subrouter()
 	routes.MessageRouter(router)
 
