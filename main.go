@@ -17,11 +17,10 @@ func main() {
 	}
 
 	port := os.Getenv("PORT_ENV")
-	infoPort := ":" + port
 
 	router := mux.NewRouter().PathPrefix("/api").Subrouter()
 	routes.MessageRouter(router)
 
 	log.Println("Server listening on port" + port)
-	http.ListenAndServe(infoPort, router)
+	http.ListenAndServe(":8080", router)
 }
