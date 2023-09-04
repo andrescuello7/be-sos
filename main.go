@@ -4,14 +4,20 @@ import (
 	"go-sms/routes"
 	"log"
 	"net/http"
+	"os"
 
 	"github.com/gorilla/mux"
 )
 
 func main() {
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080"
+	}
+
 	router := mux.NewRouter().PathPrefix("/api").Subrouter()
 	routes.MessageRouter(router)
 
-	log.Println("Server listening on port 8080")
-	http.ListenAndServe(":8080", router)
+	log.Printf("Server listening on port %s\n", port)
+	http.ListenAndServe(":"+port, router)
 }
