@@ -7,5 +7,6 @@ import (
 )
 
 func MessageRouter(routes *mux.Router) {
+	routes.HandleFunc("/message", controllers.GetMessage).Methods("GET")
 	routes.HandleFunc("/message", controllers.PostMessage).Methods("POST")
 }

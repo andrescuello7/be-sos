@@ -13,6 +13,11 @@ import (
 	"github.com/joho/godotenv"
 )
 
+func GetMessage(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode("Welcome it's message service!")
+}
+
 func PostMessage(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 
