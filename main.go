@@ -4,7 +4,6 @@ import (
 	"go-sms/routes"
 	"log"
 	"net/http"
-	"os"
 
 	"github.com/gorilla/mux"
 	"github.com/joho/godotenv"
@@ -16,11 +15,9 @@ func main() {
 		log.Fatal("Error loading environment")
 	}
 
-	port := os.Getenv("PORT_ENV")
-
 	router := mux.NewRouter().PathPrefix("/api").Subrouter()
 	routes.MessageRouter(router)
 
-	log.Println("Server listening on port" + port)
+	log.Println("Server listening on port 8080")
 	http.ListenAndServe(":8080", router)
 }
