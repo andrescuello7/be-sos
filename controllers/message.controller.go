@@ -45,7 +45,7 @@ func PostMessage(w http.ResponseWriter, r *http.Request) {
 	}
 
 	req.Header.Add("Content-Type", "application/x-www-form-urlencoded")
-	req.Header.Add("Authorization", "Basic QUNlNjg3OGNmZWI0OGVjNDUxZDYzZDg2MjI0YmY3ZTE5YzoxOTZkOGE1ZDM0MGYyMjVjNTFmNGUyYjZkYjc5NzE3Nw==")
+	req.Header.Add("Authorization", "Basic QUNlNjg3OGNmZWI0OGVjNDUxZDYzZDg2MjI0YmY3ZTE5Yzo0NjRhOTM0NGJlMmQ0ZDBmZTk2NmM0NDQxNDhlZjA2Nw==")
 
 	res, err := client.Do(req)
 	if err != nil {
