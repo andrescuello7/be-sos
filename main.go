@@ -17,7 +17,7 @@ func main() {
 	//environment variables -> .env
 	err := godotenv.Load()
 	if err != nil {
-		log.Fatal("Error loading environment")
+		log.Println("Error loading environment", err)
 	}
 
 	//get connection with db
