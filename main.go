@@ -44,6 +44,6 @@ func main() {
 	handler := c.Handler(router)
 
 	//server running
-	log.Printf("Server listening on port %s\n", port)
+	log.Println("Server listening on port %s\n", port)
 	http.ListenAndServe(":"+port, handler)
 }
